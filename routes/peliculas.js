@@ -2,14 +2,10 @@ const express = require('express');
 const router = express.Router();
 const peliculasController = require('../controllers/peliculasController');
 
-router.get('/', function(res, res){
-    res.send('hola')
-});
 
 //Creación
 
 router.get('/crear', peliculasController.crear);
-
 router.post('/crear', peliculasController.guardado);
 
 //Lectura
@@ -18,7 +14,7 @@ router.get('/', peliculasController.listado);
 
 //Detalle
 
-router.get('/:id', peliculasController.detalle);
+router.get('/detalle/:id', peliculasController.detalle);
 
 //Actualización
 

@@ -30,18 +30,24 @@ let peliculasController = {
             .then(function (pelicula) {
                 res.render('detallePelicula', {pelicula:pelicula});
             })
+            
     },
-    editar: function (req, res) {
-        let pedidoPelicula = db.Pelicula.findByPk(req.params.id);
+    editar: async function (req, res) {
+        try {
+            let pedidoPelicula = await db.Pelicula.findByPk(req.params.id);
 
-        let pedidoGeneros = db.Genero.findAll()
+        let pedidoGeneros = await db.Genero.findAll()
 
         Promise.all([pedidoPelicula, pedidoGeneros])
             .then(function([pelicula, generos]) {
                 res.render('editarPelicula', {pelicula:pelicula, generos:generos});
             })
+        }catch(error){
+            console.log(error)
+        }
     },
     actualizar: function (req, res) {
+        console.log(req.query)
         db.Pelicula.update({
             title: req.body.titulo,
             awards: req.body.premios,
@@ -54,7 +60,7 @@ let peliculasController = {
                 id: req.params.id
             }
         })
-        res.redirect("/peliculas/" + req.params.id)
+        res.redirect("/" + req.params.id)
     },
     borrar: function (req, res) {
         db.Pelicula.destroy({
@@ -62,7 +68,7 @@ let peliculasController = {
                 id: req.params.id
             }
         })
-        res.redirect("/peliculas");
+        res.redirect("/");
     }
 }
 

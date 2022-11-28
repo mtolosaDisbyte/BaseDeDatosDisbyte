@@ -1,4 +1,4 @@
-<%- include('header') -%>
+<% include('./header') %>
 <h1><%= pelicula.title %></h1>
 <ul>
     <li>
@@ -19,7 +19,7 @@
     <li>
         Actores: 
         <ul>
-            <% for (let i = 0; i < Pelicula.actores.length; i++) { %>
+            <% for (let i = 0; i < pelicula.actores.length; i++) { %>
                 <li>
                     <%= pelicula.actores[i].first_name %> <%= pelicula.actores[i].last_name %>
                 </li>
@@ -27,10 +27,10 @@
         </ul>
     </li>
 </ul>
-<a href="/peliculas/editar/<%=pelicula.id%>">
+<a href="/editar/<%=pelicula.id%>">
     <button>Editar</button>
 </a>
-<form action="/peliculas/borrar/<%=pelicula.id%>" method="POST">
+<form action="/borrar/<%=pelicula.id%>" method="POST">
     <button type="submit">Borrar</button>
 </form>
-<%- include('footer') -%>
+<% include('./footer') %>

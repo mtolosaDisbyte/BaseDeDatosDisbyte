@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js -e js,mjs,json,ejs,css",
+    "test": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,11 @@
   },
   "homepage": "https://github.com/MatiTolosaa/ProyectoIndividual#readme",
   "dependencies": {
+    "ejs": "^3.1.8",
+    "ejs-lint": "^2.0.0",
     "express": "^4.18.2",
     "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
     "sequelize": "^6.25.8"
   }
 }

@@ -22,7 +22,7 @@ module.exports = function(sequelize, dataTypes) {
         genre_id: {
             type: dataTypes.INTEGER
         },
-        realease_date: {
+        release_date: {
             type: dataTypes.DATE
         }
     }
