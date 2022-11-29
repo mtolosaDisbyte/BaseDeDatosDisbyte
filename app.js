@@ -11,5 +11,5 @@ app.listen(3000, () => {
     console.log('listening on port')
 })
 
-
+app.use(express.urlencoded({extended:true}));
 app.use('/', peliculasRouter)

@@ -16,6 +16,7 @@ let peliculasController = {
             length: req.body.duracion,
             rating: req.body.rating,
         })
+        res.redirect("/");
     },
     listado: function (req, res) {
         db.Pelicula.findAll()
@@ -32,19 +33,14 @@ let peliculasController = {
             })
             
     },
-    editar: async function (req, res) {
-        try {
-            let pedidoPelicula = await db.Pelicula.findByPk(req.params.id);
-
-        let pedidoGeneros = await db.Genero.findAll()
+    editar: function (req, res) {
+        let pedidoPelicula = db.Pelicula.findByPk(req.params.id)
+        let pedidoGeneros = db.Genero.findAll()
 
         Promise.all([pedidoPelicula, pedidoGeneros])
             .then(function([pelicula, generos]) {
                 res.render('editarPelicula', {pelicula:pelicula, generos:generos});
             })
-        }catch(error){
-            console.log(error)
-        }
     },
     actualizar: function (req, res) {
         console.log(req.query)
@@ -60,7 +56,7 @@ let peliculasController = {
                 id: req.params.id
             }
         })
-        res.redirect("/" + req.params.id)
+        res.redirect("/detalle/" + req.params.id)
     },
     borrar: function (req, res) {
         db.Pelicula.destroy({

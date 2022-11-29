@@ -1,5 +1,5 @@
-<% include('./header') %>
-<h1><%= pelicula.title %></h1>
+<%- include('./header.ejs') %>
+<h1><%=pelicula.title%></h1>
 <ul>
     <li>
        Duración: <%=pelicula.length%>
@@ -21,9 +21,9 @@
         <ul>
             <% for (let i = 0; i < pelicula.actores.length; i++) { %>
                 <li>
-                    <%= pelicula.actores[i].first_name %> <%= pelicula.actores[i].last_name %>
+                    <%=pelicula.actores[i].first_name%> <%=pelicula.actores[i].last_name%>
                 </li>
-                <% } %>
+            <% } %>
         </ul>
     </li>
 </ul>
@@ -33,4 +33,4 @@
 <form action="/borrar/<%=pelicula.id%>" method="POST">
     <button type="submit">Borrar</button>
 </form>
-<% include('./footer') %>
+<%- include('./footer.ejs') %>
