@@ -1,0 +1,17 @@
+<%- include('./header.ejs') %>
+
+    <h1>Iniciar Sesión</h1>
+    <form action="/users/login" method="POST">
+        <div>
+            <label for="">Email</label>
+            <input type="email" name="email">
+        </div>
+        <div>
+            <label for="">Contraseña</label>
+            <input type="password" name="password">
+        </div>
+        <input type="hidden" name="cookie">
+        <button type="submit">Iniciar Sesión!</button>
+    </form>
+
+<%- include('./footer.ejs') %>
