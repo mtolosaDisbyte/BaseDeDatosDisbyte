@@ -23,7 +23,7 @@ module.exports = function(sequelize, dataTypes  ) {
         rol:{
             type: dataTypes.INTEGER,
             defaultValue: 0
-        },
+        }
     }
 
     let config = {

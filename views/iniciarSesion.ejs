@@ -1,7 +1,7 @@
 <%- include('./header.ejs') %>
 
     <h1>Iniciar Sesión</h1>
-    <form action="/users/login" method="POST">
+    <form action="/users/acceso" method="POST">
         <div>
             <label for="">Email</label>
             <input type="email" name="email">
@@ -10,7 +10,7 @@
             <label for="">Contraseña</label>
             <input type="password" name="password">
         </div>
-        <input type="hidden" name="cookie">
+        <input type="hidden" name="cookie" value="true">
         <button type="submit">Iniciar Sesión!</button>
     </form>
 

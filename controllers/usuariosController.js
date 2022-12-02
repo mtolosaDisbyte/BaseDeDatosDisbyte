@@ -1,4 +1,4 @@
-const db = require('../database/models/Users');
+const db = require('../database/models');
 
 const controller = {
     registrar: (req, res) => {
@@ -6,7 +6,7 @@ const controller = {
     },
     crear:(req,res) => {
         db.users.create({
-            name: req.body.nombre,
+            name: req.body.name,
             password: req.body.password,
             email: req.body.email,
         })
@@ -19,12 +19,18 @@ const controller = {
         db.users.findOne({where:{email:req.body.email}})
             .then((user) => {
                 req.session.user = user
-
+                console.log(user);
                 if (req.body.cookie){
                     res.cookie('user', req.body.email,{maxAge: 1000 * 60 * 10})
                 }
                 return res.redirect('/')
+
             })
+    },
+    logout: (req,res) => {
+        delete req.session.user
+        res.clearCookie('user');
+        return res.redirect('/')
     },
 }
 
