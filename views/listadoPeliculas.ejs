@@ -1,6 +1,6 @@
-<%- include('./header') %>
-<h1>Listado de películas</h1>
-<ul>
+<%- include('./header.ejs') %>
+<h2 class="titulo-2">Listado de películas</h2>
+<ul class="pelis">
     <% for (let i = 0; i < peliculas.length; i++) { %>
         <li>
             <a href="/detalle/<%=peliculas[i].id%>">

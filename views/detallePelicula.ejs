@@ -1,6 +1,6 @@
 <%- include('./header.ejs') %>
-<h1><%=pelicula.title%></h1>
-<ul>
+<h1 class="titulo-2"><%=pelicula.title%></h1>
+<ul class="detalle">
     <li>
        Duración: <%=pelicula.length%>
     </li>
@@ -27,10 +27,15 @@
         </ul>
     </li>
 </ul>
-<a href="/editar/<%=pelicula.id%>">
+<a class= "editar" href="/editar/<%=pelicula.id%>">
+    <div class="detalle-boton">
     <button>Editar</button>
+    </div>
 </a>
+
 <form action="/borrar/<%=pelicula.id%>" method="POST">
+    <p class="detalle-boton">
     <button type="submit">Borrar</button>
+    </p>
 </form>
 <%- include('./footer.ejs') %>

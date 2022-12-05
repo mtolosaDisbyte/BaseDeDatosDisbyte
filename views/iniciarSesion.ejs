@@ -1,6 +1,6 @@
 <%- include('./header.ejs') %>
 
-    <h1>Iniciar Sesión</h1>
+    <h1 class="titulo-2">Iniciar Sesión</h1>
     <form action="/users/acceso" method="POST">
         <div>
             <label for="">Email</label>
@@ -11,7 +11,9 @@
             <input type="password" name="password">
         </div>
         <input type="hidden" name="cookie" value="true">
+        <div class="boton">
         <button type="submit">Iniciar Sesión!</button>
+        </div>
     </form>
 
 <%- include('./footer.ejs') %>

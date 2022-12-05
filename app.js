@@ -19,6 +19,10 @@ app.set("views", join(__dirname, "./views"));
 //Template Engine
 app.set("view engine", "ejs");
 
+//statics
+const {static} = require("express");
+app.use(static(join(__dirname, "./public")));
+
 //Routers
 const peliculasRouter = require('./routes/peliculas');
 const usersRouter = require('./routes/users');
