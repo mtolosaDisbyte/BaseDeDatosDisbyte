@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const peliculasController = require('../controllers/peliculasController');
+const isAdmin = require('../middlewares/userAdmin')
 
 
 //Creación
 
-router.get('/crear', peliculasController.crear);
+router.get('/crear', isAdmin, peliculasController.crear);
 router.post('/crear', peliculasController.guardado);
 
 //Lectura
@@ -18,12 +19,12 @@ router.get('/detalle/:id', peliculasController.detalle);
 
 //Actualización
 
-router.get('/editar/:id', peliculasController.editar);
+router.get('/editar/:id', isAdmin, peliculasController.editar);
 router.post('/editar/:id', peliculasController.actualizar);
 
 //Borrado
 
-router.post('/borrar/:id', peliculasController.borrar);
+router.post('/borrar/:id', isAdmin, peliculasController.borrar);
 
 
 module.exports = router;

@@ -6,13 +6,13 @@ const method = require('method-override');
 const cookie = require('cookie-parser')
 
 
-
 app.use(session({
     secret:'ProyectoIndividual',
     resave:false,
     saveUninitialized:false,
 }))
 app.use(cookie());
+app.use(require("./middlewares/user"));
 
 app.set("views", join(__dirname, "./views"));
 
