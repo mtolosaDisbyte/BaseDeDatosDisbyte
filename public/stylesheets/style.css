@@ -76,21 +76,6 @@ form div button{
     border-radius: 0.25rem;   
     margin-top: 10px;
 }
-/* .editar{
-    display: flex;
-    justify-content: center;
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    align-items: center;
-    width: 10%;
-    height: 2.5rem;
-    color: black;
-    background-color: lightslategray;
-    border: none;
-    border-radius: 0.25rem;   
-    margin-top: 10px;
-} */
 button{
     background-color: lightslategray;
     border: none;
