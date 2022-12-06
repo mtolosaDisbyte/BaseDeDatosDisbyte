@@ -27,15 +27,20 @@
         </ul>
     </li>
 </ul>
-<a class= "editar" href="/editar/<%=pelicula.id%>">
-    <div class="detalle-boton">
-    <button>Editar</button>
-    </div>
-</a>
-
-<form action="/borrar/<%=pelicula.id%>" method="POST">
-    <p class="detalle-boton">
-    <button type="submit">Borrar</button>
-    </p>
-</form>
+<% if (user) { %>
+    <% if (user.rol === 1) { %>
+     
+        <a class= "editar" href="/editar/<%=pelicula.id%>">
+            <div class="detalle-boton">
+                <button>Editar</button>
+            </div>
+        </a>
+        
+        <form action="/borrar/<%=pelicula.id%>" method="POST">
+            <p class="detalle-boton">
+                <button type="submit">Borrar</button>
+            </p>
+        </form>
+    <% } %>
+<% } %>
 <%- include('./footer.ejs') %>

@@ -28,10 +28,12 @@ module.exports = function(sequelize, dataTypes) {
     }
     let config = {
         tableName: "movies",
-        timestamps: false,
+        timestamps: true,
         createdAt: "created_at",
         updatedAt: "updated_at",
         paranoid: true,
+        deletedAt: "destroyTime"
+        
     }
     let Pelicula = sequelize.define(alias, cols, config);
 

@@ -19,12 +19,12 @@ router.get('/detalle/:id', peliculasController.detalle);
 
 //Actualización
 
-router.get('/editar/:id', isAdmin, peliculasController.editar);
+router.get('/editar/:id', peliculasController.editar);
 router.post('/editar/:id', peliculasController.actualizar);
 
 //Borrado
 
-router.post('/borrar/:id', isAdmin, peliculasController.borrar);
+router.post('/borrar/:id', peliculasController.borrar);
 
 
 module.exports = router;

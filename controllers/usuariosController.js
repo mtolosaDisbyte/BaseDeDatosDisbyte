@@ -1,13 +1,16 @@
 const db = require('../database/models');
+const bcrypt = require('bcrypt');
 
 const controller = {
     registrar: (req, res) => {
         return res.render('registrar');
     },
     crear:(req,res) => {
+        let password = req.body.password
+        let hash = bcrypt.hashSync(password, 10)
         db.users.create({
             name: req.body.name,
-            password: req.body.password,
+            password: hash,
             email: req.body.email,
         })
         return res.redirect("/users/login")
