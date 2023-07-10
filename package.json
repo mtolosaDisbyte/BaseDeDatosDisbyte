@@ -1,5 +1,5 @@
 {
-  "name": "proyectoindividual",
+  "name": "BaseDeDatosDisbyte",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MatiTolosaa/ProyectoIndividual.git"
+    "url": "git+https://github.com/mtolosaDisbyte/BaseDeDatosDisbyte.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MatiTolosaa/ProyectoIndividual/issues"
+    "url": "https://github.com/mtolosaDisbyte/BaseDeDatosDisbyte.git/issues"
   },
-  "homepage": "https://github.com/MatiTolosaa/ProyectoIndividual#readme",
+  "homepage": "https://github.com/mtolosaDisbyte/BaseDeDatosDisbyte.git#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
-    "ejs": "^3.1.8",
+    "ejs": "^3.1.9",
     "ejs-lint": "^2.0.0",
     "express": "^4.18.2",
     "express-session": "^1.17.3",

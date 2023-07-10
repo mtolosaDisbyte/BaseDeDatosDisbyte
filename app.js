@@ -23,7 +23,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(method('m'))
 
 app.use(session({
-    secret:'ProyectoIndividual',
+    secret:'baseDeDatosDisbyte',
     resave:false,
     saveUninitialized:false,
 }))
